@@ -1,0 +1,14 @@
+{
+  "name": "amazon-clone",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "test": "npm test --prefix server",
+    "smoke": "npm run smoke --prefix server"
+  },
+  "devDependencies": { "concurrently": "^9.0.1" }
+}
